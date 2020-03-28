@@ -12,20 +12,19 @@ const [description, setDescription] = useState('');
 const [value, setValue] = useState('');
 const history = useHistory();
 
-const ongId  =localStorage.getItem('ongId');
+const ongId  = localStorage.getItem('ongId');
 async function handleNewIncident(e){
     e.preventDefault();
-
-    console.log("teste");
     const data ={
         title,
         description,
         value
     };
     try{
+        console.log("ongId=" + ongId);
         await api.post('incidents', data, {
             headers:{
-                Authorizations:ongId,
+                Authorization: ongId,
             }
         })
         history.push('/profile');
