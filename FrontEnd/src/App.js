@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './Header';
+
+import './global.css';
+
+import Routes from './routes';
 
 function App() {
   return (
-    // <h1>Hello Omnistack!</h1>
-    <Header>
-      Semana Omnistack
-    </Header>  
+   <Routes />
   );
 }
 
