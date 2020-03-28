@@ -6,12 +6,12 @@ module.exports = {
 
         const ong = await connection('ongs')
         .where('id', id)
-        .select(name)
+        .select('name')
         .first();
 
         if(!ong){
             return response.status(400).json({error: 'No ONG found with this id'});
         }
-        return response.json("ong");
+        return response.json(ong);
     }
 }
